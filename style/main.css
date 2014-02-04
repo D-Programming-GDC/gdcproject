@@ -1,0 +1,43 @@
+body {
+  font-family: sans-serif;
+  font-size: 0.9em;
+  line-height: 1.23em;
+  padding: 0;
+  margin: 1.23em;
+  background: white;
+  color: black;
+}
+h3 {
+  border-top: 2px solid #ddd;
+  padding: 8px 0 0 0;
+  margin: 1.5em 0 0 0;
+}
+center {
+  padding: 8px 0 0 0;
+  margin: 1.5em 0 0 0;
+}
+a {
+  color: #1f00ff;
+  text-decoration: none;
+}
+a:visited {
+  color: #9900dd;
+}
+a:hover {
+  color: #00a400;
+  text-decoration: underline;
+}
+a:active {
+  color: #ff0000;
+}
+p {
+}
+
+.page {
+  clear: both;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  text-align: left;
+  width: 90%;
+}

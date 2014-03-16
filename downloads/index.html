@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+<meta name="keywords" content="GNU D Compiler, GDC, D programming language">
+<meta name="description" content="GNU D Compiler">
+<link rel="stylesheet" href="/style/main.css" type="text/css" media="all" charset="utf-8">
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+<title>GDC - D Programming Language for GCC</title>
+</head>
+
+<body>
+
+<center><a href="/"><img src="/images/gdc-logo.png" alt="GDC Project Revived" width="200px"></a></center>
+
+<center>
+<small>
+[<a href="http://gdcproject.org">home</a>]
+[<a href="http://gdcproject.org/contributing">contributing</a>]
+[<a href="http://gdcproject.org/documentation">documentation</a>]
+[<a href="http://bugzilla.gdcproject.org">bugs</a>]
+[<a href="https://github.com/D-Programming-GDC/GDC">current git</a>]
+[<a href="http://forum.dlang.org/group/D.gnu">mailing lists</a>]
+[<a href="http://wiki.gdcproject.org">wiki</a>]
+</small>
+</center>
+
+<a href="https://github.com/D-Programming-GDC">
+<img style="position: absolute; top: 0; right: 0; border: 0;"
+     src="/images/github-ribbon.png" alt="Fork me on GitHub">
+</a>
+
+<div class="page">
+<h3>Source code</h3>
+
+<p>For access to the current development sources of GDC, visit
+<a href="https://github.com/D-Programming-GDC/GDC">our git repository</a>.
+
+<h3>Linux distribution packages</h3>
+<p> Official packages are available for these linux distributions:
+<ul>
+  <li><a href="https://www.archlinux.org/packages/?sort=&arch=i686&arch=x86_64&q=gdc">Arch Linux</a></li>
+  <li><a href="http://packages.ubuntu.com/search?keywords=gdc&searchon=names&exact=1&suite=all&section=all">Ubuntu</a></li>
+</ul>
+
+<h3>Binary releases</h3>
+
+<p> This page contains native and cross compilers. A native compiler creates executables for the system it runs on.
+A cross-compiler runs on 'host' and generates code for 'target'. The headings on this page specify the compiler 'host',
+the entries in the Target column specify the 'target'.
+
+<h4>Windows X86 32bit (i686-w64-mingw32)</h4>
+<div class="hostBox">
+<div class="dlBox">
+  <div class="dlTarget">Daniel Green's builds</div>
+  <table>
+  <tr>
+    <th class="dlHostCol"></th>
+    <th class="dlCommentCol">Comment</th>
+    <th>DMDFE</th>
+    <th>Runtime</th>
+    <th>GCC</th>
+    <th>Multilib</th>
+    <th>GDC revision</th>
+    <th>Build Date</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>TDM64</td>
+    <td></td>
+    <td>2.058</td>
+    <td>yes</td>
+    <td>4.6.1</td>
+    <td>-m32<br>-m64</td>
+    <td>6a4bafe80b</td>
+    <td>2012-07-08</td>
+    <td><a href="http://gdcproject.org/downloads/binaries/i686-w64-mingw32/dgreen/gcc-4.6.1-tdm64-1-gdc-6a4bafe80b-20120708-D2.058.7z">Download</a></td>
+  </tr>
+  </table>
+</div>
+<div class="dlBox">
+  <div class="dlTarget">Standard builds</div>
+  <table>
+  <tr>
+    <th class="dlHostCol">Target</th>
+    <th class="dlCommentCol">Comment</th>
+    <th>DMDFE</th>
+    <th>Runtime</th>
+    <th>GCC</th>
+    <th>Multilib</th>
+    <th>GDC revision</th>
+    <th>Build Date</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>arm-linux-gnueabihf</td>
+    <td></td>
+    <td>2.064.2</td>
+    <td>yes</td>
+    <td>4.8.2</td>
+    <td></td>
+    <td>665978132e</td>
+    <td>2014-03-12</td>
+    <td><a href="http://gdcproject.org/downloads/binaries/i686-w64-mingw32/arm-linux-gnueabihf_2.064.2_gcc4.8.2_665978132e_20140312.7z">Download</a></td>
+  </tr>
+  <tr>
+    <td>arm-linux-gnueabi</td>
+    <td></td>
+    <td>2.064.2</td>
+    <td>yes</td>
+    <td>4.8.2</td>
+    <td></td>
+    <td>665978132e</td>
+    <td>2014-03-12</td>
+    <td><a href="http://gdcproject.org/downloads/binaries/i686-w64-mingw32/arm-linux-gnueabi_2.064.2_gcc4.8.2_665978132e_20140312.7z">Download</a></td>
+  </tr>
+  </table>
+</div>
+<a class="archiveLink" href="ftp://ftp.gdcproject.org/binaries/i686-w64-mingw32/">Release archive</a>
+</div>
+<h4>Windows X86 64bit (x86_64-w64-mingw32)</h4>
+<div class="hostBox">
+<div class="dlBox">
+  <div class="dlTarget">Standard builds</div>
+  <table>
+  <tr>
+    <th class="dlHostCol">Target</th>
+    <th class="dlCommentCol">Comment</th>
+    <th>DMDFE</th>
+    <th>Runtime</th>
+    <th>GCC</th>
+    <th>Multilib</th>
+    <th>GDC revision</th>
+    <th>Build Date</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>arm-linux-gnueabihf</td>
+    <td></td>
+    <td>2.064.2</td>
+    <td>yes</td>
+    <td>4.8.2</td>
+    <td></td>
+    <td>665978132e</td>
+    <td>2014-03-12</td>
+    <td><a href="http://gdcproject.org/downloads/binaries/x86_64-w64-mingw32/arm-linux-gnueabihf_2.064.2_gcc4.8.2_665978132e_20140312.7z">Download</a></td>
+  </tr>
+  <tr>
+    <td>arm-linux-gnueabi</td>
+    <td></td>
+    <td>2.064.2</td>
+    <td>yes</td>
+    <td>4.8.2</td>
+    <td></td>
+    <td>665978132e</td>
+    <td>2014-03-12</td>
+    <td><a href="http://gdcproject.org/downloads/binaries/x86_64-w64-mingw32/arm-linux-gnueabi_2.064.2_gcc4.8.2_665978132e_20140312.7z">Download</a></td>
+  </tr>
+  </table>
+</div>
+<a class="archiveLink" href="ftp://ftp.gdcproject.org/binaries/x86_64-w64-mingw32/">Release archive</a>
+</div>
+<h4>Linux X86 32bit (i686-linux-gnu)</h4>
+<div class="hostBox">
+<div class="dlBox">
+  <div class="dlTarget">Standard builds</div>
+  <table>
+  <tr>
+    <th class="dlHostCol">Target</th>
+    <th class="dlCommentCol">Comment</th>
+    <th>DMDFE</th>
+    <th>Runtime</th>
+    <th>GCC</th>
+    <th>Multilib</th>
+    <th>GDC revision</th>
+    <th>Build Date</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>native</td>
+    <td></td>
+    <td>2.064.2</td>
+    <td>yes</td>
+    <td>4.8.2</td>
+    <td></td>
+    <td>665978132e</td>
+    <td>2014-03-09</td>
+    <td><a href="http://gdcproject.org/downloads/binaries/i686-linux-gnu/native_2.064.2_gcc4.8.2_665978132e_20140309.tar.xz">Download</a></td>
+  </tr>
+  <tr>
+    <td>arm-linux-gnueabihf</td>
+    <td></td>
+    <td>2.064.2</td>
+    <td>yes</td>
+    <td>4.8.2</td>
+    <td></td>
+    <td>665978132e</td>
+    <td>2014-03-12</td>
+    <td><a href="http://gdcproject.org/downloads/binaries/i686-linux-gnu/arm-linux-gnueabihf_2.064.2_gcc4.8.2_665978132e_20140312.tar.xz">Download</a></td>
+  </tr>
+  <tr>
+    <td>arm-linux-gnueabi</td>
+    <td></td>
+    <td>2.064.2</td>
+    <td>yes</td>
+    <td>4.8.2</td>
+    <td></td>
+    <td>665978132e</td>
+    <td>2014-03-12</td>
+    <td><a href="http://gdcproject.org/downloads/binaries/i686-linux-gnu/arm-linux-gnueabi_2.064.2_gcc4.8.2_665978132e_20140312.tar.xz">Download</a></td>
+  </tr>
+  </table>
+</div>
+<a class="archiveLink" href="ftp://ftp.gdcproject.org/binaries/i686-linux-gnu/">Release archive</a>
+</div>
+<h4>Linux X86 64bit (x86_64-linux-gnu)</h4>
+<div class="hostBox">
+<div class="dlBox">
+  <div class="dlTarget">Standard builds</div>
+  <table>
+  <tr>
+    <th class="dlHostCol">Target</th>
+    <th class="dlCommentCol">Comment</th>
+    <th>DMDFE</th>
+    <th>Runtime</th>
+    <th>GCC</th>
+    <th>Multilib</th>
+    <th>GDC revision</th>
+    <th>Build Date</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>native</td>
+    <td></td>
+    <td>2.064.2</td>
+    <td>yes</td>
+    <td>4.8.2</td>
+    <td></td>
+    <td>665978132e</td>
+    <td>2014-03-09</td>
+    <td><a href="http://gdcproject.org/downloads/binaries/x86_64-linux-gnu/native_2.064.2_gcc4.8.2_665978132e_20140309.tar.xz">Download</a></td>
+  </tr>
+  <tr>
+    <td>i686-linux-gnu</td>
+    <td></td>
+    <td>2.064.2</td>
+    <td>yes</td>
+    <td>4.8.2</td>
+    <td></td>
+    <td>665978132e</td>
+    <td>2014-03-09</td>
+    <td><a href="http://gdcproject.org/downloads/binaries/x86_64-linux-gnu/i686-linux-gnu_2.064.2_gcc4.8.2_665978132e_20140309.tar.xz">Download</a></td>
+  </tr>
+  <tr>
+    <td>arm-linux-gnueabihf</td>
+    <td></td>
+    <td>2.064.2</td>
+    <td>yes</td>
+    <td>4.8.2</td>
+    <td></td>
+    <td>665978132e</td>
+    <td>2014-03-12</td>
+    <td><a href="http://gdcproject.org/downloads/binaries/x86_64-linux-gnu/arm-linux-gnueabihf_2.064.2_gcc4.8.2_665978132e_20140312.tar.xz">Download</a></td>
+  </tr>
+  <tr>
+    <td>arm-linux-gnueabi</td>
+    <td></td>
+    <td>2.064.2</td>
+    <td>yes</td>
+    <td>4.8.2</td>
+    <td></td>
+    <td>665978132e</td>
+    <td>2014-03-12</td>
+    <td><a href="http://gdcproject.org/downloads/binaries/x86_64-linux-gnu/arm-linux-gnueabi_2.064.2_gcc4.8.2_665978132e_20140312.tar.xz">Download</a></td>
+  </tr>
+  </table>
+</div>
+<a class="archiveLink" href="ftp://ftp.gdcproject.org/binaries/x86_64-linux-gnu/">Release archive</a>
+</div>
+<h4>Linux ARM (hardfloat) (arm-linux-gnueabihf)</h4>
+<div class="hostBox">
+<div class="dlBox">
+  <div class="dlTarget">Standard builds</div>
+  <table>
+  <tr>
+    <th class="dlHostCol">Target</th>
+    <th class="dlCommentCol">Comment</th>
+    <th>DMDFE</th>
+    <th>Runtime</th>
+    <th>GCC</th>
+    <th>Multilib</th>
+    <th>GDC revision</th>
+    <th>Build Date</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>native</td>
+    <td></td>
+    <td>2.064.2</td>
+    <td>yes</td>
+    <td>4.8.2</td>
+    <td></td>
+    <td>665978132e</td>
+    <td>2014-03-12</td>
+    <td><a href="http://gdcproject.org/downloads/binaries/arm-linux-gnueabihf/native_2.064.2_gcc4.8.2_665978132e_20140312.tar.xz">Download</a></td>
+  </tr>
+  </table>
+</div>
+<a class="archiveLink" href="ftp://ftp.gdcproject.org/binaries/arm-linux-gnueabihf/">Release archive</a>
+</div>
+<h4>Linux ARM (softfloat) (arm-linux-gnueabi)</h4>
+<div class="hostBox">
+<div class="dlBox">
+  <div class="dlTarget">Standard builds</div>
+  <table>
+  <tr>
+    <th class="dlHostCol">Target</th>
+    <th class="dlCommentCol">Comment</th>
+    <th>DMDFE</th>
+    <th>Runtime</th>
+    <th>GCC</th>
+    <th>Multilib</th>
+    <th>GDC revision</th>
+    <th>Build Date</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>native</td>
+    <td></td>
+    <td>2.064.2</td>
+    <td>yes</td>
+    <td>4.8.2</td>
+    <td></td>
+    <td>665978132e</td>
+    <td>2014-03-12</td>
+    <td><a href="http://gdcproject.org/downloads/binaries/arm-linux-gnueabi/native_2.064.2_gcc4.8.2_665978132e_20140312.tar.xz">Download</a></td>
+  </tr>
+  </table>
+</div>
+<a class="archiveLink" href="ftp://ftp.gdcproject.org/binaries/arm-linux-gnueabi/">Release archive</a>
+</div>
+
+</div>
+
+</body>
+
+</html>

@@ -90,6 +90,16 @@ table td {
   vertical-align: top;
   white-space: nowrap;
 }
+table tr.dlSepTop td {
+  border-bottom: 1px solid #969696;
+}
+table tr.dlSepBottom td {
+  border-top: 1px solid #969696;
+}
+table tr.dlSepBoth td {
+  border-top: 1px solid #969696;
+  border-bottom: 1px solid #969696;
+}
 table a:link, table a:visited {
   color: #000;
   background-color: transparent;

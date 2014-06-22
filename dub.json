@@ -1,0 +1,10 @@
+{
+  "name": "gdcproject",
+  "description": "The vibe.d server application running gdcproject.org.",
+  "copyright": "Copyright © 2014, Iain Buclaw",
+  "authors": ["Iain Buclaw"],
+  "dependencies": {
+      "vibe-d": ">=0.7.19"
+  },
+  "versions": ["VibeDefaultMain"]
+}

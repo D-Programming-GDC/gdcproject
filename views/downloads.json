@@ -1,0 +1,318 @@
+[
+	{
+		"archiveURL": "ftp://ftp.gdcproject.org/binaries/i686-w64-mingw32/",
+		"triplet": "i686-w64-mingw32",
+		"name": "Windows X86 32bit",
+		"sets": [
+			{
+				"targetHeader": "Target",
+				"name": "Daniel Green's builds",
+				"downloads": [
+					{
+						"buildDate": "2012-07-08",
+						"gdcRev": "6a4bafe80b",
+						"gcc": "4.6.1",
+						"dmdFE": "2.058",
+						"multilib": [
+							"-m32",
+							"-m64"
+						],
+						"runtime": "yes",
+						"url": "http://gdcproject.org/downloads/binaries/i686-w64-mingw32/dgreen/gcc-4.6.1-tdm64-1-gdc-6a4bafe80b-20120708-D2.058.7z",
+						"runtimeLink": "",
+						"target": "TDM64",
+						"comment": ""
+					}
+				],
+				"comment": ""
+			},
+			{
+				"targetHeader": "Target",
+				"name": "Standard builds",
+				"downloads": [
+					{
+						"buildDate": "2014-06-15",
+						"gdcRev": "a8ad6a6678",
+						"gcc": "4.9.0",
+						"dmdFE": "2.065",
+						"multilib": [],
+						"runtime": "yes",
+						"url": "http://gdcproject.org/downloads/binaries/i686-w64-mingw32/arm-linux-gnueabihf_2.065_gcc4.9.0_a8ad6a6678_20140615.7z",
+						"runtimeLink": "",
+						"target": "arm-linux-gnueabihf",
+						"comment": ""
+					},
+					{
+						"buildDate": "2014-06-15",
+						"gdcRev": "a8ad6a6678",
+						"gcc": "4.9.0",
+						"dmdFE": "2.065",
+						"multilib": [],
+						"runtime": "yes",
+						"url": "http://gdcproject.org/downloads/binaries/i686-w64-mingw32/arm-linux-gnueabi_2.065_gcc4.9.0_a8ad6a6678_20140615.7z",
+						"runtimeLink": "",
+						"target": "arm-linux-gnueabi",
+						"comment": ""
+					},
+					{
+						"buildDate": "2014-06-15",
+						"gdcRev": "a8ad6a6678",
+						"gcc": "4.9.0",
+						"dmdFE": "2.065",
+						"multilib": [],
+						"runtime": "yes",
+						"url": "http://gdcproject.org/downloads/binaries/i686-w64-mingw32/native_2.065_gcc4.9.0_a8ad6a6678_20140615.7z",
+						"runtimeLink": "",
+						"target": "native",
+						"comment": "Unsupported alpha build"
+					}
+				],
+				"comment": ""
+			}
+		],
+		"comment": ""
+	},
+	{
+		"archiveURL": "ftp://ftp.gdcproject.org/binaries/x86_64-w64-mingw32/",
+		"triplet": "x86_64-w64-mingw32",
+		"name": "Windows X86 64bit",
+		"sets": [
+			{
+				"targetHeader": "Target",
+				"name": "Standard builds",
+				"downloads": [
+					{
+						"buildDate": "2014-06-15",
+						"gdcRev": "a8ad6a6678",
+						"gcc": "4.9.0",
+						"dmdFE": "2.065",
+						"multilib": [],
+						"runtime": "yes",
+						"url": "http://gdcproject.org/downloads/binaries/x86_64-w64-mingw32/arm-linux-gnueabihf_2.065_gcc4.9.0_a8ad6a6678_20140615.7z",
+						"runtimeLink": "",
+						"target": "arm-linux-gnueabihf",
+						"comment": ""
+					},
+					{
+						"buildDate": "2014-06-15",
+						"gdcRev": "a8ad6a6678",
+						"gcc": "4.9.0",
+						"dmdFE": "2.065",
+						"multilib": [],
+						"runtime": "yes",
+						"url": "http://gdcproject.org/downloads/binaries/x86_64-w64-mingw32/arm-linux-gnueabi_2.065_gcc4.9.0_a8ad6a6678_20140615.7z",
+						"runtimeLink": "",
+						"target": "arm-linux-gnueabi",
+						"comment": ""
+					},
+					{
+						"buildDate": "2014-06-15",
+						"gdcRev": "a8ad6a6678",
+						"gcc": "4.9.0",
+						"dmdFE": "2.065",
+						"multilib": [],
+						"runtime": "yes",
+						"url": "http://gdcproject.org/downloads/binaries/x86_64-w64-mingw32/native_2.065_gcc4.9.0_a8ad6a6678_20140615.7z",
+						"runtimeLink": "",
+						"target": "native",
+						"comment": "Unsupported alpha build. SEH"
+					}
+				],
+				"comment": ""
+			}
+		],
+		"comment": ""
+	},
+	{
+		"archiveURL": "ftp://ftp.gdcproject.org/binaries/i686-linux-gnu/",
+		"triplet": "i686-linux-gnu",
+		"name": "Linux X86 32bit",
+		"sets": [
+			{
+				"targetHeader": "Target",
+				"name": "Standard builds",
+				"downloads": [
+					{
+						"buildDate": "2014-06-15",
+						"gdcRev": "a8ad6a6678",
+						"gcc": "4.9.0",
+						"dmdFE": "2.065",
+						"multilib": [],
+						"runtime": "yes",
+						"url": "http://gdcproject.org/downloads/binaries/i686-linux-gnu/native_2.065_gcc4.9.0_a8ad6a6678_20140615.tar.xz",
+						"runtimeLink": "",
+						"target": "native",
+						"comment": ""
+					},
+					{
+						"buildDate": "2014-06-15",
+						"gdcRev": "a8ad6a6678",
+						"gcc": "4.9.0",
+						"dmdFE": "2.065",
+						"multilib": [],
+						"runtime": "yes",
+						"url": "http://gdcproject.org/downloads/binaries/i686-linux-gnu/arm-linux-gnueabihf_2.065_gcc4.9.0_a8ad6a6678_20140615.tar.xz",
+						"runtimeLink": "",
+						"target": "arm-linux-gnueabihf",
+						"comment": ""
+					},
+					{
+						"buildDate": "2014-06-15",
+						"gdcRev": "a8ad6a6678",
+						"gcc": "4.9.0",
+						"dmdFE": "2.065",
+						"multilib": [],
+						"runtime": "yes",
+						"url": "http://gdcproject.org/downloads/binaries/i686-linux-gnu/arm-linux-gnueabi_2.065_gcc4.9.0_a8ad6a6678_20140615.tar.xz",
+						"runtimeLink": "",
+						"target": "arm-linux-gnueabi",
+						"comment": ""
+					}
+				],
+				"comment": ""
+			}
+		],
+		"comment": ""
+	},
+	{
+		"archiveURL": "ftp://ftp.gdcproject.org/binaries/x86_64-linux-gnu/",
+		"triplet": "x86_64-linux-gnu",
+		"name": "Linux X86 64bit",
+		"sets": [
+			{
+				"targetHeader": "Target",
+				"name": "Standard builds",
+				"downloads": [
+					{
+						"buildDate": "2014-06-15",
+						"gdcRev": "a8ad6a6678",
+						"gcc": "4.9.0",
+						"dmdFE": "2.065",
+						"multilib": [],
+						"runtime": "yes",
+						"url": "http://gdcproject.org/downloads/binaries/x86_64-linux-gnu/native_2.065_gcc4.9.0_a8ad6a6678_20140615.tar.xz",
+						"runtimeLink": "",
+						"target": "native",
+						"comment": ""
+					},
+					{
+						"buildDate": "2014-06-15",
+						"gdcRev": "a8ad6a6678",
+						"gcc": "4.9.0",
+						"dmdFE": "2.065",
+						"multilib": [],
+						"runtime": "yes",
+						"url": "http://gdcproject.org/downloads/binaries/x86_64-linux-gnu/i686-linux-gnu_2.065_gcc4.9.0_a8ad6a6678_20140615.tar.xz",
+						"runtimeLink": "",
+						"target": "i686-linux-gnu",
+						"comment": ""
+					},
+					{
+						"buildDate": "2014-06-15",
+						"gdcRev": "a8ad6a6678",
+						"gcc": "4.9.0",
+						"dmdFE": "2.065",
+						"multilib": [],
+						"runtime": "yes",
+						"url": "http://gdcproject.org/downloads/binaries/x86_64-linux-gnu/arm-linux-gnueabihf_2.065_gcc4.9.0_a8ad6a6678_20140615.tar.xz",
+						"runtimeLink": "",
+						"target": "arm-linux-gnueabihf",
+						"comment": ""
+					},
+					{
+						"buildDate": "2014-06-15",
+						"gdcRev": "a8ad6a6678",
+						"gcc": "4.9.0",
+						"dmdFE": "2.065",
+						"multilib": [],
+						"runtime": "yes",
+						"url": "http://gdcproject.org/downloads/binaries/x86_64-linux-gnu/arm-linux-gnueabi_2.065_gcc4.9.0_a8ad6a6678_20140615.tar.xz",
+						"runtimeLink": "",
+						"target": "arm-linux-gnueabi",
+						"comment": ""
+					},
+					{
+						"buildDate": "2014-06-15",
+						"gdcRev": "a8ad6a6678",
+						"gcc": "4.9.0",
+						"dmdFE": "2.065",
+						"multilib": [],
+						"runtime": "yes",
+						"url": "http://gdcproject.org/downloads/binaries/x86_64-linux-gnu/x86_64-w64-mingw32_2.065_gcc4.9.0_a8ad6a6678_20140615.tar.xz",
+						"runtimeLink": "",
+						"target": "x86_64-w64-mingw32",
+						"comment": "Unsupported alpha build. SEH"
+					},
+					{
+						"buildDate": "2014-06-15",
+						"gdcRev": "a8ad6a6678",
+						"gcc": "4.9.0",
+						"dmdFE": "2.065",
+						"multilib": [],
+						"runtime": "yes",
+						"url": "http://gdcproject.org/downloads/binaries/x86_64-linux-gnu/i686-w64-mingw32_2.065_gcc4.9.0_a8ad6a6678_20140615.tar.xz",
+						"runtimeLink": "",
+						"target": "i686-w64-mingw32",
+						"comment": "Unsupported alpha build"
+					}
+				],
+				"comment": ""
+			}
+		],
+		"comment": ""
+	},
+	{
+		"archiveURL": "ftp://ftp.gdcproject.org/binaries/arm-linux-gnueabihf/",
+		"triplet": "arm-linux-gnueabihf",
+		"name": "Linux ARM (hardfloat)",
+		"sets": [
+			{
+				"targetHeader": "Target",
+				"name": "Standard builds",
+				"downloads": [
+					{
+						"buildDate": "2014-06-15",
+						"gdcRev": "a8ad6a6678",
+						"gcc": "4.9.0",
+						"dmdFE": "2.065",
+						"multilib": [],
+						"runtime": "yes",
+						"url": "http://gdcproject.org/downloads/binaries/arm-linux-gnueabihf/native_2.065_gcc4.9.0_a8ad6a6678_20140615.tar.xz",
+						"runtimeLink": "",
+						"target": "native",
+						"comment": ""
+					}
+				],
+				"comment": ""
+			}
+		],
+		"comment": ""
+	},
+	{
+		"archiveURL": "ftp://ftp.gdcproject.org/binaries/arm-linux-gnueabi/",
+		"triplet": "arm-linux-gnueabi",
+		"name": "Linux ARM (softfloat)",
+		"sets": [
+			{
+				"targetHeader": "Target",
+				"name": "Standard builds",
+				"downloads": [
+					{
+						"buildDate": "2014-06-15",
+						"gdcRev": "a8ad6a6678",
+						"gcc": "4.9.0",
+						"dmdFE": "2.065",
+						"multilib": [],
+						"runtime": "yes",
+						"url": "http://gdcproject.org/downloads/binaries/arm-linux-gnueabi/native_2.065_gcc4.9.0_a8ad6a6678_20140615.tar.xz",
+						"runtimeLink": "",
+						"target": "native",
+						"comment": ""
+					}
+				],
+				"comment": ""
+			}
+		],
+		"comment": ""
+	}
+]

@@ -62,9 +62,10 @@
 //   of content pages.
 // - Load testing, identify vulnerabilities, etc...
 
-module gdcproject;
+module gdcproject.app;
 
 import vibe.d;
+import gdcproject.downloads;
 
 // Read and return as a string the (hard coded) header template.
 // The template is assumed to be in html format.
@@ -104,13 +105,13 @@ void handleRequest(HTTPServerRequest req, HTTPServerResponse res)
       || (requestURL.length >= 8 && requestURL[0..8] == "/images/"))
     return serveStaticFiles("static/")(req, res);
 
+  // Render download page from template
+  if (requestURL == "/downloads" || requestURL == "/downloads/index.html")
+    return renderDownloadPage(req, res);
+
   // Downloads are kept to the /downloads directory.
   if (requestURL.length >= 11 && requestURL[0..11] == "/downloads/")
     return serveStaticFiles("downloads/")(req, res);
-
-  // The downloads page itself is generated outside this server.
-  if (requestURL == "/downloads")
-    return serveStaticFile("downloads/index.html")(req, res);
 
   // Not a requesting a static file, look for a markdown script instead.
   // This is done by translating the request into a file path, and running
@@ -150,7 +151,6 @@ void handleError(HTTPServerRequest req, HTTPServerResponse res, HTTPServerErrorI
   res.writeBody(content.data, "text/html; charset=UTF-8");
 }
 
-
 shared static this()
 {
   // Set (hard coded) server settings.
@@ -163,4 +163,3 @@ shared static this()
   // Catch all GET requests and push them through our main handler.
   listenHTTP(settings, toDelegate(&handleRequest));
 }
-

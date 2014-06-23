@@ -1,0 +1,60 @@
+### Source code ###
+
+For access to the current development sources of GDC, visit
+[our git repository][gitrepo]. Build instructions are available on [this wiki page][installwiki].
+
+### Linux distribution packages ###
+Official packages are available for these linux distributions:
+ * [Arch Linux][archpkg]
+ * [Debian][debianpkg]
+ * [Ubuntu][ubuntupkg]
+
+### Binary releases ###
+
+This page contains native and cross compilers. A native compiler creates executables for the system it runs on.
+A cross-compiler runs on 'host' and generates code for 'target'. The headings on this page specify the compiler 'host',
+the entries in the Target column specify the 'target'.
+
+{{#Host}}
+#### {{name}} ({{triplet}}) ####
+<div class="hostBox">
+{{#DownloadSet}}
+<div class="dlBox">
+  <div class="dlTarget">{{name}}</div>
+  <table>
+  <tr>
+    <th class="dlHostCol">{{targetHeader}}</th>
+    <th class="dlCommentCol">Comment</th>
+    <th>DMDFE</th>
+    <th>Runtime</th>
+    <th>GCC</th>
+    <th>Multilib</th>
+    <th>GDC revision</th>
+    <th>Build Date</th>
+    <th></th>
+  </tr>
+{{#DownloadEntry}}
+  <tr class="{{rowClass}}">
+    <td>{{target}}</td>
+    <td>{{comment}}</td>
+    <td>{{dmdFE}}</td>
+    <td>{{runtime}}</td>
+    <td>{{gcc}}</td>
+    <td>{{{multilib}}}</td>
+    <td>{{gdcRev}}</td>
+    <td>{{buildDate}}</td>
+    <td><a href="{{url}}">Download</a></td>
+  </tr>
+{{/DownloadEntry}}
+  </table>
+</div>
+{{/DownloadSet}}
+<a class="archiveLink" href="{{archiveURL}}">Release archive</a>
+</div>
+{{/Host}}
+
+[gitrepo]: https://github.com/D-Programming-GDC/GDC
+[installwiki]: http://wiki.dlang.org/GDC/Installation
+[archpkg]: https://www.archlinux.org/packages/?sort=&arch=i686&arch=x86_64&q=gdc
+[debianpkg]: https://packages.debian.org/search?keywords=gdc&searchon=names&suite=all&section=all
+[ubuntupkg]: http://packages.ubuntu.com/search?keywords=gdc&searchon=names&exact=1&suite=all&section=all

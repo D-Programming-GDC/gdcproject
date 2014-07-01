@@ -56,7 +56,7 @@
 //   any of the todo listed items below.
 //-----------------------------------------------------------------------------
 // TODO:
-// - Read files once and re-use in memory until they change content.
+// - Use Redis as a memstore for caching files until they change content.
 // - Make all (hard coded) components configurable.
 // - Add support for /news, which would be a dynamic blog-style set
 //   of content pages.
@@ -67,14 +67,14 @@ module gdcproject.app;
 import vibe.d;
 import gdcproject.downloads;
 
+
 // Read and return as a string the (hard coded) header template.
 // The template is assumed to be in html format.
 
 string readHeader()
 {
-  import std.file : read;
   scope(failure) return "<html><body>";
-  return cast(string) read("templates/header.inc");
+  return readContents("templates/header.inc");
 }
 
 // Read and return as a string the (hard coded) footer template.
@@ -82,25 +82,32 @@ string readHeader()
 
 string readFooter()
 {
-  import std.file : read;
   scope(failure) return "</body></hmtl>";
-  return cast(string) read("templates/footer.inc");
+  return readContents("templates/footer.inc");
+}
+
+// Read return as a string the contents of the file in 'path'.
+
+string readContents(string path)
+{
+  import std.file : read;
+  return cast(string) read(path);
 }
 
 // Handle any kind of GET request on the server.
+// The paths /style, /images and /downloads are forwarded to the
+// static files handler provided by vibe.d
+// All other paths are translated a file path, and if it exists,
+// loading and running its contents through the markdown filter.
 
 void handleRequest(HTTPServerRequest req, HTTPServerResponse res)
 {
   import std.array : appender;
-  import std.file : read;
   import std.string : chomp;
   scope(failure) return;
 
-  // Forward style, images and downloads to the static files
-  // handler provided by vibe.d
   string requestURL = chomp(req.requestURL, "/");
 
-  // Content for styles and images found in one place.
   if ((requestURL.length >= 7 && requestURL[0..7] == "/style/")
       || (requestURL.length >= 8 && requestURL[0..8] == "/images/"))
     return serveStaticFiles("static/")(req, res);
@@ -109,13 +116,10 @@ void handleRequest(HTTPServerRequest req, HTTPServerResponse res)
   if (requestURL == "/downloads" || requestURL == "/downloads/index.html")
     return renderDownloadPage(req, res);
 
-  // Downloads are kept to the /downloads directory.
   if (requestURL.length >= 11 && requestURL[0..11] == "/downloads/")
     return serveStaticFiles("downloads/")(req, res);
 
-  // Not a requesting a static file, look for a markdown script instead.
-  // This is done by translating the request into a file path, and running
-  // its contents through the markdown filter, if the file exists.
+  // Not a requesting a static file, look for the markdown script instead.
   string requestPath;
   if (requestURL.length == 0)
     requestPath = "views/index.md";
@@ -125,7 +129,7 @@ void handleRequest(HTTPServerRequest req, HTTPServerResponse res)
   // Build up the content.
   auto content = appender!string();
   content ~= readHeader();
-  content ~= filterMarkdown(cast(string)read(requestPath));
+  content ~= filterMarkdown(readContents(requestPath));
   content ~= readFooter();
 
   // Send the page data to the client.

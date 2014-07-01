@@ -133,13 +133,14 @@
 				"name": "Standard builds",
 				"downloads": [
 					{
-						"buildDate": "2014-06-15",
+						"buildDate": "2014-07-04",
 						"gdcRev": "a8ad6a6678",
 						"gcc": "4.9.0",
 						"dmdFE": "2.065",
 						"multilib": [],
 						"runtime": "yes",
-						"url": "http://gdcproject.org/downloads/binaries/i686-linux-gnu/native_2.065_gcc4.9.0_a8ad6a6678_20140615.tar.xz",
+						"url": "http://gdcproject.org/downloads/binaries/i686-linux-gnu/native_2.065_gcc4.9.0_a8ad6a6678_20140704.tar.xz",
+
 						"runtimeLink": "",
 						"target": "native",
 						"comment": ""

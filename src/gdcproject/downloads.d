@@ -24,7 +24,6 @@ struct Host
 void renderDownloadPage(HTTPServerRequest req, HTTPServerResponse res)
 {
   import mustache;
-  import std.file : read;
   scope(failure) return;
 
   alias MustacheEngine!(string) Mustache;
@@ -32,7 +31,7 @@ void renderDownloadPage(HTTPServerRequest req, HTTPServerResponse res)
   auto context = new Mustache.Context();
   Host[] hosts;
 
-  auto jsonData = cast(string)read("views/downloads.json");
+  auto jsonData = readContents("views/downloads.json");
   deserializeJson(hosts, parseJson(jsonData));
 
   foreach(host; hosts)

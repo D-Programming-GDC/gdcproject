@@ -4,8 +4,8 @@ body {
   line-height: 1.23em;
   padding: 0;
   margin: 1.23em;
-  background: white;
-  color: black;
+  color: #373737;
+  background: #f8f8f8;
 }
 h3 {
   border-top: 2px solid #ddd;
@@ -15,7 +15,7 @@ h3 {
 h4 {
   border-bottom: 1px dotted #ddd;
   padding: 4px 0 0 0;
-  margin: 1em 0 0 0;
+  margin: 2em 0 1em 0;
 }
 center {
   padding: 8px 0 0 0;
@@ -26,16 +26,14 @@ a {
   text-decoration: none;
 }
 a:visited {
-  color: #9900dd;
+  color: #9900ff;
 }
 a:hover {
-  color: #00a400;
+  color: #00a4ff;
   text-decoration: underline;
 }
 a:active {
-  color: #ff0000;
-}
-p {
+  color: #0090ff;
 }
 
 .page {
@@ -46,6 +44,11 @@ p {
   text-align: left;
   width: 90%;
 }
+.header {
+  clear: both;
+  margin-left: auto;
+  margin-right: auto;
+}
 .footer {
   clear: both;
   margin-left: auto;
@@ -55,6 +58,19 @@ p {
   width: 90%;
   border-top: 2px solid #ddd;
   font-style: italic;
+}
+
+#forkme_banner {
+  display: block;
+  position: absolute;
+  top:0;
+  right: 10px;
+  z-index: 10;
+  padding: 10px 50px 10px 10px;
+  color: #fff;
+  font-weight: 700;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 
 table {
@@ -89,16 +105,6 @@ table td {
   padding-bottom: 7px;
   vertical-align: top;
   white-space: nowrap;
-}
-table tr.dlSepTop td {
-  border-bottom: 1px solid #969696;
-}
-table tr.dlSepBottom td {
-  border-top: 1px solid #969696;
-}
-table tr.dlSepBoth td {
-  border-top: 1px solid #969696;
-  border-bottom: 1px solid #969696;
 }
 table a:link, table a:visited {
   color: #000;

@@ -108,7 +108,8 @@ void handleRequest(HTTPServerRequest req, HTTPServerResponse res)
 
   string requestURL = chomp(req.requestURL, "/");
 
-  if ((requestURL.length >= 7 && requestURL[0..7] == "/style/")
+  if ((requestURL.length >= 4 && requestURL[0..4] == "/js/")
+      || (requestURL.length >= 7 && requestURL[0..7] == "/style/")
       || (requestURL.length >= 8 && requestURL[0..8] == "/images/"))
     return serveStaticFiles("static/")(req, res);
 

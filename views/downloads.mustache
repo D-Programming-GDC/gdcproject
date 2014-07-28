@@ -17,39 +17,42 @@ the entries in the Target column specify the 'target'.
 
 {{#Host}}
 #### {{name}} ({{triplet}}) ####
-<div class="hostBox">
+<div class="page-header">
 {{#DownloadSet}}
-<div class="dlBox">
-  <div class="dlTarget">{{name}}</div>
-  <table>
-  <tr>
-    <th class="dlHostCol">{{targetHeader}}</th>
-    <th class="dlCommentCol">Comment</th>
-    <th>DMDFE</th>
-    <th>Runtime</th>
-    <th>GCC</th>
-    <th>Multilib</th>
-    <th>GDC revision</th>
-    <th>Build Date</th>
-    <th></th>
-  </tr>
+  <table class="table table-striped">
+    <tr class="panel-title">
+      <td colspan="9">{{name}}</td>
+    </tr>
+    <tr>
+      <th>{{targetHeader}}</th>
+      <th>Comment</th>
+      <th>DMDFE</th>
+      <th>Runtime</th>
+      <th>GCC</th>
+      <th>Multilib</th>
+      <th>GDC revision</th>
+      <th>Build Date</th>
+      <th></th>
+    </tr>
 {{#DownloadEntry}}
-  <tr class="{{rowClass}}">
-    <td>{{target}}</td>
-    <td>{{comment}}</td>
-    <td>{{dmdFE}}</td>
-    <td>{{runtime}}</td>
-    <td>{{gcc}}</td>
-    <td>{{{multilib}}}</td>
-    <td>{{gdcRev}}</td>
-    <td>{{buildDate}}</td>
-    <td><a href="{{url}}">Download</a></td>
-  </tr>
+    <tr>
+      <td>{{target}}</td>
+      <td>{{comment}}</td>
+      <td>{{dmdFE}}</td>
+      <td>{{runtime}}</td>
+      <td>{{gcc}}</td>
+      <td>{{{multilib}}}</td>
+      <td>{{gdcRev}}</td>
+      <td>{{buildDate}}</td>
+      <td><a href="{{url}}">Download</a></td>
+    </tr>
 {{/DownloadEntry}}
+    <tr>
+      <td colspan="8"></td>
+      <td><a href="{{archiveURL}}">Release&nbsp;archive</a></td>
+    </tr>
   </table>
-</div>
 {{/DownloadSet}}
-<a class="archiveLink" href="{{archiveURL}}">Release archive</a>
 </div>
 {{/Host}}
 

@@ -56,7 +56,7 @@
 //   any of the todo listed items below.
 //-----------------------------------------------------------------------------
 // TODO:
-// - Use Redis as a memstore for caching files until they change content.
+// - Add in server-side logging facilities.
 // - Make all (hard coded) components configurable.
 // - Add support for /news, which would be a dynamic blog-style set
 //   of content pages.
@@ -65,34 +65,9 @@
 module gdcproject.app;
 
 import vibe.d;
+
 import gdcproject.downloads;
-
-
-// Read and return as a string the (hard coded) header template.
-// The template is assumed to be in html format.
-
-string readHeader()
-{
-  scope(failure) return "<html><body>";
-  return readContents("templates/header.inc");
-}
-
-// Read and return as a string the (hard coded) footer template.
-// The template is assumed to be in html format.
-
-string readFooter()
-{
-  scope(failure) return "</body></hmtl>";
-  return readContents("templates/footer.inc");
-}
-
-// Read return as a string the contents of the file in 'path'.
-
-string readContents(string path)
-{
-  import std.file : read;
-  return cast(string) read(path);
-}
+import gdcproject.render;
 
 // Handle any kind of GET request on the server.
 // The paths /style, /images and /downloads are forwarded to the
@@ -102,7 +77,6 @@ string readContents(string path)
 
 void handleRequest(HTTPServerRequest req, HTTPServerResponse res)
 {
-  import std.array : appender;
   import std.string : chomp;
   scope(failure) return;
 
@@ -115,7 +89,7 @@ void handleRequest(HTTPServerRequest req, HTTPServerResponse res)
 
   // Render download page from template
   if (requestURL == "/downloads" || requestURL == "/downloads/index.html")
-    return renderDownloadPage(req, res);
+    return serveDownloadsPage(req, res);
 
   if (requestURL.length >= 11 && requestURL[0..11] == "/downloads/")
     return serveStaticFiles("downloads/")(req, res);
@@ -128,13 +102,10 @@ void handleRequest(HTTPServerRequest req, HTTPServerResponse res)
     requestPath = "views" ~ requestURL ~ ".md";
 
   // Build up the content.
-  auto content = appender!string();
-  content ~= readHeader();
-  content ~= filterMarkdown(readContents(requestPath));
-  content ~= readFooter();
+  string content = renderPage(requestPath, &readContents);
 
   // Send the page data to the client.
-  res.writeBody(content.data, "text/html; charset=UTF-8");
+  res.writeBody(content, "text/html; charset=UTF-8");
 }
 
 // Handle an error on the server.
@@ -156,15 +127,40 @@ void handleError(HTTPServerRequest req, HTTPServerResponse res, HTTPServerErrorI
   res.writeBody(content.data, "text/html; charset=UTF-8");
 }
 
+
 shared static this()
 {
+  import core.thread : Thread;
+
   // Set (hard coded) server settings.
   auto settings = new HTTPServerSettings;
   settings.port = 8080;
   settings.bindAddresses = ["::1", "127.0.0.1"];
   settings.errorPageHandler = toDelegate(&handleError);
 
+  // Load all pages into cache.
+  buildCache();
+
+  // Start the watcher task on template files.
+  static Thread templateWatcher = null;
+  if (templateWatcher is null)
+  {
+    templateWatcher = new Thread(&waitForTemplateChanges);
+    templateWatcher.isDaemon(true);
+    templateWatcher.start();
+  }
+
+  // Start the watcher task on individual pages.
+  static Thread pageWatcher = null;
+  if (pageWatcher is null)
+  {
+    pageWatcher = new Thread(&waitForViewChanges);
+    pageWatcher.isDaemon(true);
+    pageWatcher.start();
+  }
+
   // Start listening.
   // Catch all GET requests and push them through our main handler.
   listenHTTP(settings, toDelegate(&handleRequest));
 }
+

@@ -1,7 +1,28 @@
-﻿module gdcproject.downloads;
+﻿// Copyright (C) 2014  Iain Buclaw
+// Written by Johannes Pfau
+
+// This program is free software; you can redistribute it and/or
+// modify it under the terms of the GNU Lesser General Public
+// License as published by the Free Software Foundation; either
+// version 3.0 of the License, or (at your option) any later version.
+
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// Lesser General Public License for more details.
+
+// You should have received a copy of the GNU Lesser General Public
+// License along with this program; if not, see
+// <http://www.gnu.org/licenses/lgpl-3.0.txt>.
+
+// The gdcproject website powered by vibe.d
+
+// This file serves the downloads page.
+
+module gdcproject.downloads;
 
 import vibe.d;
-import gdcproject.app;
+import gdcproject.render;
 
 struct Download
 {
@@ -21,17 +42,16 @@ struct Host
   DownloadSet[] sets;
 }
 
-void renderDownloadPage(HTTPServerRequest req, HTTPServerResponse res)
+string renderDownloadsPage(string path)
 {
   import mustache;
-  scope(failure) return;
 
   alias MustacheEngine!(string) Mustache;
   Mustache engine;
   auto context = new Mustache.Context();
   Host[] hosts;
 
-  auto jsonData = readContents("views/downloads.json");
+  auto jsonData = readContents(path ~ ".json");
   deserializeJson(hosts, parseJson(jsonData));
 
   foreach(host; hosts)
@@ -67,13 +87,17 @@ void renderDownloadPage(HTTPServerRequest req, HTTPServerResponse res)
   }
 
   engine.level = Mustache.CacheLevel.no;
-  string mdbody = engine.render("views/downloads", context);
+  return engine.render(path, context);
+}
 
-  auto content = appender!string();
-  content ~= readHeader();
-  content ~= filterMarkdown(mdbody);
-  content ~= readFooter();
+void serveDownloadsPage(HTTPServerRequest req, HTTPServerResponse res)
+{
+  scope(failure) return;
+
+  // Build up the content.
+  string content = renderPage("views/downloads", &renderDownloadsPage);
 
   // Send the page data to the client.
-  res.writeBody(content.data, "text/html; charset=UTF-8");
+  res.writeBody(content, "text/html; charset=UTF-8");
 }
+

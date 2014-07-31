@@ -92,7 +92,7 @@ void handleRequest(HTTPServerRequest req, HTTPServerResponse res)
     return serveDownloadsPage(req, res);
 
   if (requestURL.length >= 11 && requestURL[0..11] == "/downloads/")
-    return serveStaticFiles("downloads/")(req, res);
+    return serveStaticFiles("./")(req, res);
 
   // Not a requesting a static file, look for the markdown script instead.
   string requestPath;

@@ -10,8 +10,8 @@ source D front end with GCC.
 The GNU D Compiler (GDC) project was originally started by David Friedman
 in 2004 until early 2007 when he disappeared from the D scene, and was no
 longer able to maintain GDC.  Following a revival attempt in 2008, GDC is
-now under the lead of Iain Buclaw who has been steering the project since
-2009 with the assistance of its contributors, without them the project
+now under the lead of Iain Buclaw, who has been steering the project since
+2009 with the assistance of its contributors. Without them, the project
 would not have been nearly as successful as it has been.
 
 ### Bugs in GDC ###

@@ -4,8 +4,8 @@
   "copyright": "Copyright © 2014, Iain Buclaw",
   "authors": ["Iain Buclaw"],
   "dependencies": {
-      "vibe-d": "~master",
-      "mustache-d": "~master"
+      "vibe-d": "0.7.22",
+      "mustache-d": "0.1.0"
   },
   "versions": ["VibeDefaultMain"]
 }

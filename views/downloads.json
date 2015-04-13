@@ -55,13 +55,13 @@
 						"comment": ""
 					},
 					{
-						"buildDate": "2015-04-05",
+						"buildDate": "2015-04-13",
 						"gdcRev": "f378f9ab41",
 						"gcc": "4.9.2",
 						"dmdFE": "2.066.1",
 						"multilib": [],
 						"runtime": "yes",
-						"url": "http://gdcproject.org/downloads/binaries/i686-w64-mingw32/i686-w64-mingw32_2.066.1_gcc4.9.2_f378f9ab41_20150405.7z",
+						"url": "http://gdcproject.org/downloads/binaries/i686-w64-mingw32/i686-w64-mingw32_2.066.1_gcc4.9.2_f378f9ab41_20150413.7z",
 						"runtimeLink": "",
 						"target": "i686-w64-mingw32",
 						"comment": "Unsupported alpha build"
@@ -106,13 +106,13 @@
 						"comment": ""
 					},
 					{
-						"buildDate": "2015-04-05",
+						"buildDate": "2015-04-13",
 						"gdcRev": "f378f9ab41",
 						"gcc": "4.9.2",
 						"dmdFE": "2.066.1",
 						"multilib": [],
 						"runtime": "yes",
-						"url": "http://gdcproject.org/downloads/binaries/x86_64-w64-mingw32/x86_64-w64-mingw32_2.066.1_gcc4.9.2_f378f9ab41_20150405.7z",
+						"url": "http://gdcproject.org/downloads/binaries/x86_64-w64-mingw32/x86_64-w64-mingw32_2.066.1_gcc4.9.2_f378f9ab41_20150413.7z",
 						"runtimeLink": "",
 						"target": "x86_64-w64-mingw32",
 						"comment": "Unsupported alpha build. SEH"

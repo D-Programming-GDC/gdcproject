@@ -61,23 +61,6 @@
 						"comment": ""
 					},
 					{
-						"filename": "i686-w64-mingw32_2.066.1_gcc5.2.0_dadb5a3784_20150830.tar.xz",
-						"buildID": "x86_64-linux-gnu/i686-w64-mingw32",
-						"buildDate": "2015-08-30",
-						"gdcRev": "dadb5a3784fc9e12761e49c35937ad1c594c824d",
-						"gcc": "5.2.0",
-						"dmdFE": "2.066.1",
-						"srcID": "x86_64-linux-gnu/gcc-5/i686-w64-mingw32",
-						"multilib": [],
-						"runtime": "yes",
-						"url": "http://gdcproject.org/downloads/binaries/5.2.0/x86_64-linux-gnu/gdc-5.2.0-i686-w64-mingw32+2.066.1.tar.xz",
-						"runtimeLink": "",
-						"md5Sum": "ecb784f4655a2c29445a24141a8ab984",
-						"release": 1,
-						"target": "i686-w64-mingw32",
-						"comment": "Unsupported alpha build"
-					},
-					{
 						"filename": "x86_64-linux-gnu_2.066.1_gcc5.2.0_dadb5a3784_20150830.tar.xz",
 						"buildID": "x86_64-linux-gnu/x86_64-linux-gnu",
 						"buildDate": "2015-08-30",
@@ -93,23 +76,6 @@
 						"release": 1,
 						"target": "x86_64-linux-gnu",
 						"comment": ""
-					},
-					{
-						"filename": "x86_64-w64-mingw32_2.066.1_gcc5.2.0_dadb5a3784_20150830.tar.xz",
-						"buildID": "x86_64-linux-gnu/x86_64-w64-mingw32",
-						"buildDate": "2015-08-30",
-						"gdcRev": "dadb5a3784fc9e12761e49c35937ad1c594c824d",
-						"gcc": "5.2.0",
-						"dmdFE": "2.066.1",
-						"srcID": "x86_64-linux-gnu/gcc-5/x86_64-w64-mingw32",
-						"multilib": [],
-						"runtime": "yes",
-						"url": "http://gdcproject.org/downloads/binaries/5.2.0/x86_64-linux-gnu/gdc-5.2.0-x86_64-w64-mingw32+2.066.1.tar.xz",
-						"runtimeLink": "",
-						"md5Sum": "9265bff29262f673e9ea9f7aa1ec6257",
-						"release": 1,
-						"target": "x86_64-w64-mingw32",
-						"comment": "Unsupported alpha build. SEH"
 					}
 				],
 				"comment": ""
@@ -293,23 +259,6 @@
 						"release": 1,
 						"target": "arm-linux-gnueabihf",
 						"comment": ""
-					},
-					{
-						"filename": "x86_64-w64-mingw32_2.066.1_gcc5.2.0_dadb5a3784_20150830.7z",
-						"buildID": "x86-w64-mingw32/x86_64-w64-mingw32",
-						"buildDate": "2015-08-30",
-						"gdcRev": "dadb5a3784fc9e12761e49c35937ad1c594c824d",
-						"gcc": "5.2.0",
-						"dmdFE": "2.066.1",
-						"srcID": "x86_64-w64-mingw32/gcc-5/x86_64-w64-mingw32",
-						"multilib": [],
-						"runtime": "yes",
-						"url": "http://gdcproject.org/downloads/binaries/5.2.0/x86_64-w64-mingw32/gdc-5.2.0+2.066.1.7z",
-						"runtimeLink": "",
-						"md5Sum": "27419b50bd1d8dd66a94026018215c56",
-						"release": 1,
-						"target": "x86_64-w64-mingw32",
-						"comment": "Unsupported alpha build. SEH"
 					}
 				],
 				"comment": ""
@@ -360,23 +309,6 @@
 						"release": 1,
 						"target": "arm-linux-gnueabihf",
 						"comment": ""
-					},
-					{
-						"filename": "i686-w64-mingw32_2.066.1_gcc5.2.0_dadb5a3784_20150830.7z",
-						"buildID": "i686-w64-mingw32/i686-w64-mingw32",
-						"buildDate": "2015-08-30",
-						"gdcRev": "dadb5a3784fc9e12761e49c35937ad1c594c824d",
-						"gcc": "5.2.0",
-						"dmdFE": "2.066.1",
-						"srcID": "i686-w64-mingw32/gcc-5/i686-w64-mingw32",
-						"multilib": [],
-						"runtime": "yes",
-						"url": "http://gdcproject.org/downloads/binaries/5.2.0/i686-w64-mingw32/gdc-5.2.0+2.066.1.7z",
-						"runtimeLink": "",
-						"md5Sum": "7846b80131bb66281bc3e5252ce7c3b2",
-						"release": 1,
-						"target": "i686-w64-mingw32",
-						"comment": "Unsupported alpha build"
 					}
 				],
 				"comment": ""

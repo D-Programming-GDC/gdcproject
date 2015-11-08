@@ -30,16 +30,34 @@ struct Download
   string target, dmdFE, runtime, gcc, gdcRev, buildDate, url, comment, runtimeLink;
 }
 
+struct SpecialDownload
+{
+  string url;
+  string[string] values;
+}
+
 struct DownloadSet
 {
   string name, comment, targetHeader;
   Download[] downloads;
 }
 
+struct SpecialSet
+{
+  string name;
+  SpecialDownload[] downloads;
+}
+
 struct Host
 {
   string name, triplet, archiveURL, comment;
   DownloadSet[] sets;
+}
+
+struct DownloadFile
+{
+  @optional Host[] standardBuilds;
+  @optional SpecialSet[] specialToolchains;
 }
 
 string renderDownloadsPage(string path)
@@ -49,12 +67,12 @@ string renderDownloadsPage(string path)
   alias MustacheEngine!(string) Mustache;
   Mustache engine;
   auto context = new Mustache.Context();
-  Host[] hosts;
+  DownloadFile mainFile;
 
   auto jsonData = readContents(path ~ ".json");
-  deserializeJson(hosts, parseJson(jsonData));
+  deserializeJson(mainFile, parseJson(jsonData));
 
-  foreach(host; hosts)
+  foreach(host; mainFile.standardBuilds)
   {
     auto hostCtx = context.addSubContext("Host");
     hostCtx["name"] = host.name;
@@ -76,7 +94,7 @@ string renderDownloadsPage(string path)
         dlCtx["dmdFE"] = dl.dmdFE;
         dlCtx["runtime"] = dl.runtime;
         dlCtx["gcc"] = dl.gcc;
-        dlCtx["gdcRev"] = dl.gdcRev[0..10];
+        dlCtx["gdcRev"] = dl.gdcRev;
         dlCtx["buildDate"] = dl.buildDate;
         dlCtx["url"] = dl.url;
         dlCtx["comment"] = dl.comment;
@@ -86,7 +104,20 @@ string renderDownloadsPage(string path)
     }
   }
 
+  foreach(set; mainFile.specialToolchains)
+  {
+    auto specialCtx = context.addSubContext(set.name);
+    foreach(dl; set.downloads)
+    {
+      auto dlCtx = specialCtx.addSubContext("DownloadEntry");
+      dlCtx["url"] = dl.url;
+      foreach(key, value; dl.values)
+        dlCtx[key] = value;
+    }
+  }
+
   engine.level = Mustache.CacheLevel.no;
+
   return engine.render(path, context);
 }
 

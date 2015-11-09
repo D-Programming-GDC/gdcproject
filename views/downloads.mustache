@@ -56,8 +56,97 @@ the entries in the Target column specify the 'target'.
 </div>
 {{/Host}}
 
+
+
+### Special toolchains ###
+#### devkitARM ####
+
+DevkitARM is part of the [devkitPro][dkPro] project and provides
+a toolchain to build executables for ARM based video game devices
+such as GBA, DS, DSi and 3DS devices. These packages are addons to
+devkitARM and require a full devkitARM installation. See the included
+README file for more information.
+
+{{#devkitARM}}
+<div class="page-header">
+  <table class="table table-striped">
+    <tr class="panel-title">
+      <td colspan="7"></td>
+    </tr>
+    <tr>
+      <th>Filename</th>
+      <th>Comment</th>
+      <th>DMDFE</th>
+      <th>Runtime</th>
+      <th>GDC revision</th>
+      <th>Build Date</th>
+      <th></th>
+    </tr>
+{{#DownloadEntry}}
+    <tr>
+      <td>{{file}}</td>
+      <td>{{comment}}</td>
+      <td>{{dmdFE}}</td>
+      <td>{{runtime}}</td>
+      <td>{{gdcRev}}</td>
+      <td>{{buildDate}}</td>
+      <td><a href="{{url}}">Download</a></td>
+    </tr>
+{{/DownloadEntry}}
+    <tr>
+      <td colspan="6"></td>
+      <td><a href="ftp://ftp.gdcproject.org/binaries/devkitARM">Release&nbsp;archive</a></td>
+    </tr>
+  </table>
+</div>
+{{/devkitARM}}
+
+
+#### devkitPPC ####
+
+DevkitPPC is part of the [devkitPro][dkPro] project and provides
+a toolchain to build executables for PPC based video game devices
+such as Gamecube, Wii and WiiU devices. These packages are addons to
+devkitPPC and require a full devkitPPC installation. See the included
+README file for more information.
+
+{{#devkitPPC}}
+<div class="page-header">
+  <table class="table table-striped">
+    <tr class="panel-title">
+      <td colspan="7"></td>
+    </tr>
+    <tr>
+      <th>Filename</th>
+      <th>Comment</th>
+      <th>DMDFE</th>
+      <th>Runtime</th>
+      <th>GDC revision</th>
+      <th>Build Date</th>
+      <th></th>
+    </tr>
+{{#DownloadEntry}}
+    <tr>
+      <td>{{filename}}</td>
+      <td>{{comment}}</td>
+      <td>{{dmdFE}}</td>
+      <td>{{runtime}}</td>
+      <td>{{gdcRev}}</td>
+      <td>{{buildDate}}</td>
+      <td><a href="{{url}}">Download</a></td>
+    </tr>
+{{/DownloadEntry}}
+    <tr>
+      <td colspan="6"></td>
+      <td><a href="ftp://ftp.gdcproject.org/binaries/devkitPPC">Release&nbsp;archive</a></td>
+    </tr>
+  </table>
+</div>
+{{/devkitPPC}}
+
 [gitrepo]: https://github.com/D-Programming-GDC/GDC
 [installwiki]: http://wiki.dlang.org/GDC/Installation
 [archpkg]: https://www.archlinux.org/packages/?sort=&arch=i686&arch=x86_64&q=gdc
 [debianpkg]: https://packages.debian.org/search?keywords=gdc&searchon=names&suite=all&section=all
 [ubuntupkg]: http://packages.ubuntu.com/search?keywords=gdc&searchon=names&exact=1&suite=all&section=all
+[dkPro]: https://devkitpro.org/

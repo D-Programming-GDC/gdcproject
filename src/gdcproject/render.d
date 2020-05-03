@@ -26,13 +26,65 @@ import vibe.db.redis.redis;
 
 import gdcproject.downloads;
 
+// Read and return as a string a dynamically loaded template from 'path'.
+// If not found, the value of 'notfound' is used inplace of the file.
+// The template is assumed to be in html format.
+
+string readTemplate(string path, lazy string notfound)
+{
+  import std.array : appender;
+  import std.algorithm : findSplit, strip;
+
+  // Catch recursively included templates.
+  static bool[string] rendering;
+
+  if (rendering.get(path, false))
+    return "<!-- RECURSIVE " ~ path ~ " -->";
+
+  rendering[path] = true;
+  scope(exit) rendering[path] = false;
+
+  // Read and filter the contents for any sub-templates to include.
+  string tmpl = readContentsOrNotFound(path, notfound);
+
+  auto content = appender!string;
+  content.reserve(tmpl.length);
+
+  while (tmpl.length != 0)
+  {
+    // Split up as ['... content', '{{', 'template ...']
+    auto s1 = findSplit(tmpl, "{{");
+    // No match for '{{', reached end of template.
+    if (s1[1].length == 0)
+    {
+      content ~= tmpl;
+      break;
+    }
+    // Split up as ['... template', '}}', 'content...']
+    auto s2 = findSplit(s1[2], "}}");
+    // No match for '}}', write content unfiltered.
+    if (s2[1].length == 0)
+    {
+      content ~= tmpl;
+      break;
+    }
+    // Write content before '{{'
+    content ~= s1[0];
+    // Write contents of sub-template.
+    string incpath = s2[0].strip(' ');
+    content ~= readTemplate(incpath, "<!-- NOT FOUND " ~ incpath ~ " -->");
+    // Still need to process content after '}}'
+    tmpl = s2[2];
+  }
+  return content.data;
+}
+
 // Read and return as a string the (hard coded) header template.
 // The template is assumed to be in html format.
 
 string readHeader()
 {
-  scope(failure) return "<html><body>";
-  return readContents("templates/header.inc");
+  return readTemplate("templates/header.inc", "<html><body>");
 }
 
 // Read and return as a string the (hard coded) footer template.
@@ -40,16 +92,23 @@ string readHeader()
 
 string readFooter()
 {
-  scope(failure) return "</body></hmtl>";
-  return readContents("templates/footer.inc");
+  return readTemplate("templates/footer.inc", "</body></html>");
 }
 
-// Read return as a string the contents of the file in 'path'.
+// Read return as a string the contents of the file from 'path'.
 
 string readContents(string path)
 {
   import std.file : read;
   return cast(string) read(path);
+}
+
+// Same as readContents, except returns 'notfound' on failure.
+
+string readContentsOrNotFound(string path, lazy string notfound)
+{
+  scope(failure) return notfound;
+  return readContents(path);
 }
 
 // Render the page contents to send to client.
@@ -193,4 +252,3 @@ void buildCache()
 
   rc.quit();
 }
-

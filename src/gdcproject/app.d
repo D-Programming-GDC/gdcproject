@@ -1,4 +1,4 @@
-// Copyright (C) 2014  Iain Buclaw
+// Copyright (C) 2014-2020  Iain Buclaw
 
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU Lesser General Public

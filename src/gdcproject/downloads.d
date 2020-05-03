@@ -1,4 +1,4 @@
-﻿// Copyright (C) 2014  Iain Buclaw
+// Copyright (C) 2014-2020  Iain Buclaw
 // Written by Johannes Pfau
 
 // This program is free software; you can redistribute it and/or

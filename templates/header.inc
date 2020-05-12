@@ -2,35 +2,33 @@
 <html lang="en">
 
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="content-type">
-<meta name="keywords" content="GNU D Compiler, GDC, D programming language">
-<meta name="description" content="GNU D Compiler">
-<link rel="stylesheet" href="/style/bootstrap.min.css" type="text/css" media="all" charset="utf-8">
-<link rel="stylesheet" href="/style/main.css" type="text/css" media="all" charset="utf-8">
-<link rel="icon" href="/images/gdc-omoon.png" type="image/png">
-<title>GDC - D Programming Language for GCC</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="GNU D Compiler, GDC, D programming language">
+  <meta name="description" content="GNU D Compiler">
+  <title>GDC - D Programming Language for GCC</title>
+  <link rel="icon" href="/images/gdc-omoon.png" type="image/png">
+  <link rel="stylesheet" href="/style/bootstrap.min.css" type="text/css" media="all" charset="utf-8">
+  <link rel="stylesheet" href="/style/main.css" type="text/css" media="all" charset="utf-8">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-<div class="container">
 
-<div class="header">
-  <center class="page-header">
-    <a href="/"><img src="/images/gdc-two-moons-small.png" alt="GDC Project Revived" width="200px"></a>
-  </center>
-  <ul class="nav navbar-default nav-justified">
-    <li><a href="http://gdcproject.org">home</a></li>
-    <li><a href="http://gdcproject.org/contributing">contributing</a></li>
-    <li><a href="http://gdcproject.org/downloads">downloads</a></li>
-    <li><a href="http://gdcproject.org/documentation">documentation</a></li>
-    <li><a href="http://bugzilla.gdcproject.org">bugs</a></li>
-    <li><a href="https://github.com/D-Programming-GDC/GDC">current&nbsp;git</a></li>
-    <li><a href="http://forum.dlang.org/group/D.gnu">mailing&nbsp;lists</a></li>
-    <li><a href="http://wiki.gdcproject.org">wiki</a></li>
-  </ul>
-  <a style="background: url('/images/blacktocat.png') #0090ff no-repeat 95% 50%;"
-     id="forkme_banner" href="https://github.com/D-Programming-GDC">View on GitHub</a>
-</div>
+<header class="container">
+  <nav class="navbar navbar-expand-lg flex-lg-column navbar-light bg-light">
+    <a class="navbar-brand" href="/">
+      <img alt="GDC Project Revived" src="/images/gdc-two-moons-small.png" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="menu" class="collapse navbar-collapse">
+      {{ templates/menu.inc }}
+    </div>
+  </nav>
+</header>
 
-<div class="page">
+<main class="container pt-4">
 <!-- BEGIN CONTENT -->

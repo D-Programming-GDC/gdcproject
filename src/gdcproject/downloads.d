@@ -60,7 +60,7 @@ struct DownloadFile
   @optional SpecialSet[] specialToolchains;
 }
 
-string renderDownloadsPage(string path)
+string renderOldDownloadsPage(string path)
 {
   import mustache;
 
@@ -121,14 +121,13 @@ string renderDownloadsPage(string path)
   return engine.render(path, context);
 }
 
-void serveDownloadsPage(HTTPServerRequest req, HTTPServerResponse res)
+void serveOldDownloadsPage(string path, HTTPServerResponse res)
 {
   scope(failure) return;
 
   // Build up the content.
-  string content = renderPage("views/downloads", &renderDownloadsPage);
+  string content = renderPage(path, &renderOldDownloadsPage);
 
   // Send the page data to the client.
   res.writeBody(content, "text/html; charset=UTF-8");
 }
-

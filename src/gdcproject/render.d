@@ -165,11 +165,11 @@ void waitForViewChanges()
 
         // Check if one of the downloads templates changed.
         // Don't handle delete signals.
-        if ((path.length == 20 && path == "views/downloads.json")
-            || (path.length == 24 && path == "views/downloads.mustache"))
+        if ((path.length > 15 && path[$-15..$] == "/downloads.json")
+            || (path.length > 19 && path[$-19..$] == "/downloads.mustache"))
         {
-	  path = "views/downloads";
-          string content = renderPage(path, &renderDownloadsPage, true);
+          path = (path[$-1] == 'n') ? path[0..$-5] : path[0..$-9];
+          string content = renderPage(path, &renderOldDownloadsPage, true);
           rdb.set(path, content);
         }
 
@@ -243,10 +243,12 @@ void buildCache()
     rdb.set(path, content);
   }
 
-  // Build downloads page.
+  // Build (historical) downloads page.
+  de = dirEntries("views", "downloads.mustache", SpanMode.depth, false);
+  foreach (path; de)
   {
-    string path = "views/downloads";
-    string content = renderPage(path, &renderDownloadsPage, true);
+    string downloadsPath = path[0..$-9];
+    string content = renderPage(downloadsPath, &renderOldDownloadsPage, true);
     rdb.set(path, content);
   }
 

@@ -78,6 +78,7 @@ import gdcproject.render;
 void handleRequest(HTTPServerRequest req, HTTPServerResponse res)
 {
   import std.string : chomp;
+  import std.file : exists;
   scope(failure) return;
 
   string requestURL = chomp(req.requestURL, "/");
@@ -88,8 +89,12 @@ void handleRequest(HTTPServerRequest req, HTTPServerResponse res)
     return serveStaticFiles("static/")(req, res);
 
   // Render download page from template
-  if (requestURL == "/downloads" || requestURL == "/downloads/index.html")
-    return serveDownloadsPage(req, res);
+  if (requestURL.length >= 10 && requestURL[$-10..$] == "/downloads")
+  {
+    string downloadsPath = "views" ~ requestURL ~ ".mustache";
+    if (downloadsPath.exists)
+      return serveOldDownloadsPage(downloadsPath[0..$-9], res);
+  }
 
   if (requestURL.length >= 11 && requestURL[0..11] == "/downloads/")
     return serveStaticFiles("./")(req, res);

@@ -2,7 +2,7 @@
 	"specialToolchains": [],
 	"standardBuilds": [
 		{
-			"archiveURL": "ftp://ftp.gdcproject.org/binaries/",
+			"archiveURL": "/archive/",
 			"triplet": "x86_64-linux-gnu",
 			"name": "Linux X86 64bit",
 			"sets": [
@@ -21,7 +21,7 @@
 							"srcID": "x86_64-linux-gnu/gcc-6/arm-linux-gnueabihf",
 							"multilib": ["-mfloat-abi=soft", "-mfloat-abi=softfp", "-mfloat-abi=hard"],
 							"runtime": "yes",
-							"url": "http://gdcproject.org/downloads/binaries/6.3.0/x86_64-linux-gnu/gdc-6.3.0+2.068.2-arm-linux-gnueabihf.tar.xz",
+							"url": "/archive/binaries/6.3.0/x86_64-linux-gnu/gdc-6.3.0+2.068.2-arm-linux-gnueabihf.tar.xz",
 							"runtimeLink": "",
 							"md5Sum": "1bb830ed8b3db2a95fd6ba2e4508181b",
 							"release": 1,
@@ -38,7 +38,7 @@
 							"srcID": "x86_64-linux-gnu/gcc-6/x86_64-linux-gnu",
 							"multilib": ["-m32", "-m64"],
 							"runtime": "yes",
-							"url": "http://gdcproject.org/downloads/binaries/6.3.0/x86_64-linux-gnu/gdc-6.3.0+2.068.2.tar.xz",
+							"url": "/archive/binaries/6.3.0/x86_64-linux-gnu/gdc-6.3.0+2.068.2.tar.xz",
 							"runtimeLink": "",
 							"md5Sum": "16d3067ebb3938dba46429a4d9f6178f",
 							"release": 1,
@@ -52,7 +52,7 @@
 			"comment": ""
 		},
 		{
-			"archiveURL": "ftp://ftp.gdcproject.org/binaries/",
+			"archiveURL": "/archive/",
 			"triplet": "i686-linux-gnu",
 			"name": "Linux X86 32bit",
 			"sets": [
@@ -71,7 +71,7 @@
 							"srcID": "i686-linux-gnu/gcc-6/i686-linux-gnu",
 							"multilib": [],
 							"runtime": "yes",
-							"url": "http://gdcproject.org/downloads/binaries/6.3.0/i686-linux-gnu/gdc-6.3.0+2.068.2.tar.xz",
+							"url": "/archive/binaries/6.3.0/i686-linux-gnu/gdc-6.3.0+2.068.2.tar.xz",
 							"runtimeLink": "",
 							"md5Sum": "cc8dcd66b189245e39296b1382d0dfcc",
 							"release": 1,
@@ -85,7 +85,7 @@
 			"comment": ""
 		},
 		{
-			"archiveURL": "ftp://ftp.gdcproject.org/binaries/",
+			"archiveURL": "/archive/",
 			"triplet": "arm-linux-gnueabi",
 			"name": "Linux ARM (softfloat)",
 			"sets": [
@@ -104,7 +104,7 @@
 							"srcID": "arm-linux-gnueabi/gcc-6/arm-linux-gnueabi",
 							"multilib": [],
 							"runtime": "yes",
-							"url": "http://gdcproject.org/downloads/binaries/6.3.0/arm-linux-gnueabi/gdc-6.3.0+2.068.2.tar.xz",
+							"url": "/archive/binaries/6.3.0/arm-linux-gnueabi/gdc-6.3.0+2.068.2.tar.xz",
 							"runtimeLink": "",
 							"md5Sum": "642774592c025d868552ff5388d21dae",
 							"release": 1,
@@ -118,7 +118,7 @@
 			"comment": ""
 		},
 		{
-			"archiveURL": "ftp://ftp.gdcproject.org/binaries/",
+			"archiveURL": "/archive/",
 			"triplet": "arm-linux-gnueabihf",
 			"name": "Linux ARM (hardfloat)",
 			"sets": [
@@ -137,7 +137,7 @@
 							"srcID": "arm-linux-gnueabihf/gcc-6/arm-linux-gnueabihf",
 							"multilib": [],
 							"runtime": "yes",
-							"url": "http://gdcproject.org/downloads/binaries/6.3.0/arm-linux-gnueabihf/gdc-6.3.0+2.068.2.tar.xz",
+							"url": "/archive/binaries/6.3.0/arm-linux-gnueabihf/gdc-6.3.0+2.068.2.tar.xz",
 							"runtimeLink": "",
 							"md5Sum": "ceb96d344eac162242f4fbf4e669f841",
 							"release": 1,
@@ -151,7 +151,7 @@
 			"comment": ""
 		},
 		{
-			"archiveURL": "ftp://ftp.gdcproject.org/binaries/",
+			"archiveURL": "/archive/",
 			"triplet": "x86_64-w64-mingw32",
 			"name": "Windows X86 64bit",
 			"sets": [
@@ -170,7 +170,7 @@
 							"srcID": "x86_64-w64-mingw32/gcc-6/arm-linux-gnueabihf",
 							"multilib": ["-mfloat-abi=soft", "-mfloat-abi=softfp", "-mfloat-abi=hard"],
 							"runtime": "yes",
-							"url": "http://gdcproject.org/downloads/binaries/6.3.0/x86_64-w64-mingw32/gdc-6.3.0+2.068.2-arm-linux-gnueabihf.7z",
+							"url": "/archive/binaries/6.3.0/x86_64-w64-mingw32/gdc-6.3.0+2.068.2-arm-linux-gnueabihf.7z",
 							"runtimeLink": "",
 							"md5Sum": "f525fd89b4a440ad9be81d28061d7017",
 							"release": 1,
@@ -187,7 +187,7 @@
 							"srcID": "x86_64-w64-mingw32/gcc-6/x86_64-linux-gnu",
 							"multilib": ["-m32", "-m64"],
 							"runtime": "yes",
-							"url": "http://gdcproject.org/downloads/binaries/6.3.0/x86_64-w64-mingw32/gdc-6.3.0+2.068.2-x86_64-linux-gnu.7z",
+							"url": "/archive/binaries/6.3.0/x86_64-w64-mingw32/gdc-6.3.0+2.068.2-x86_64-linux-gnu.7z",
 							"runtimeLink": "",
 							"md5Sum": "6d5f2a458d7af289fa93a969a653711d",
 							"release": 1,
@@ -201,7 +201,7 @@
 			"comment": ""
 		},
 		{
-			"archiveURL": "ftp://ftp.gdcproject.org/binaries/",
+			"archiveURL": "/archive/",
 			"triplet": "i686-w64-mingw32",
 			"name": "Windows X86 32bit",
 			"sets": [
@@ -220,7 +220,7 @@
 							"srcID": "i686-w64-mingw32/gcc-6/arm-linux-gnueabihf",
 							"multilib": ["-mfloat-abi=soft", "-mfloat-abi=softfp", "-mfloat-abi=hard"],
 							"runtime": "yes",
-							"url": "http://gdcproject.org/downloads/binaries/6.3.0/i686-w64-mingw32/gdc-6.3.0+2.068.2-arm-linux-gnueabihf.7z",
+							"url": "/archive/binaries/6.3.0/i686-w64-mingw32/gdc-6.3.0+2.068.2-arm-linux-gnueabihf.7z",
 							"runtimeLink": "",
 							"md5Sum": "b9bb503874e451483708877322ea8abf",
 							"release": 1,
@@ -237,7 +237,7 @@
 							"srcID": "x86_64-w64-mingw32/gcc-6/x86_64-linux-gnu",
 							"multilib": ["-m32", "-m64"],
 							"runtime": "yes",
-							"url": "http://gdcproject.org/downloads/binaries/6.3.0/x86_64-w64-mingw32/gdc-6.3.0+2.068.2-x86_64-linux-gnu.7z",
+							"url": "/archive/binaries/6.3.0/x86_64-w64-mingw32/gdc-6.3.0+2.068.2-x86_64-linux-gnu.7z",
 							"runtimeLink": "",
 							"md5Sum": "424ebb8dc7476bffdca9c364fedf40e7",
 							"release": 1,

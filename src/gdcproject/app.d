@@ -66,11 +66,12 @@ module gdcproject.app;
 
 import vibe.d;
 
+import gdcproject.archive;
 import gdcproject.downloads;
 import gdcproject.render;
 
 // Handle any kind of GET request on the server.
-// The paths /style, /images and /downloads are forwarded to the
+// The paths /style, /images and /archive are forwarded to the
 // static files handler provided by vibe.d
 // All other paths are translated a file path, and if it exists,
 // loading and running its contents through the markdown filter.
@@ -88,6 +89,10 @@ void handleRequest(HTTPServerRequest req, HTTPServerResponse res)
       || (requestURL.length >= 8 && requestURL[0..8] == "/images/"))
     return serveStaticFiles("static/")(req, res);
 
+  if (requestURL.length == 8 && requestURL == "/archive"
+      || requestURL.length >= 9 && requestURL[0..9] == "/archive/")
+    return serveArchivePage(req, res);
+
   // Render download page from template
   if (requestURL.length >= 10 && requestURL[$-10..$] == "/downloads")
   {
@@ -95,9 +100,6 @@ void handleRequest(HTTPServerRequest req, HTTPServerResponse res)
     if (downloadsPath.exists)
       return serveOldDownloadsPage(downloadsPath[0..$-9], res);
   }
-
-  if (requestURL.length >= 11 && requestURL[0..11] == "/downloads/")
-    return serveStaticFiles("./")(req, res);
 
   // Not a requesting a static file, look for the markdown script instead.
   string requestPath;

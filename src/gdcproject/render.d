@@ -111,6 +111,37 @@ string readContentsOrNotFound(string path, lazy string notfound)
   return readContents(path);
 }
 
+string generateTOC(string data)
+{
+  import vibe.textfilter.markdown : getMarkdownOutline;
+  import std.array : appender;
+
+  auto content = appender!string();
+
+  content ~= `<nav class="toc">`;
+
+  void generateSubSections(T)(T sections)
+  {
+    content ~= "<ul>\n";
+    foreach (section; sections)
+    {
+      content ~= `<li><a href="#`;
+      content ~= section.anchor;
+      content ~= `">`;
+      content ~= section.caption;
+      content ~= "</a>\n";
+      generateSubSections(section.subSections);
+      content ~= "</li>";
+    }
+    content ~= "</ul>\n";
+  }
+
+  generateSubSections(getMarkdownOutline(data));
+  content ~= "</nav>\n";
+
+  return content.data;
+}
+
 // Render the page contents to send to client.
 
 string renderPage(string path, string function(string) read, bool nocache = false)
@@ -134,8 +165,10 @@ string renderPage(string path, string function(string) read, bool nocache = fals
 Lnocache:
 
   auto content = appender!string();
+  auto data = read(path);
   content ~= readHeader();
-  content ~= filterMarkdown(read(path));
+  content ~= generateTOC(data);
+  content ~= filterMarkdown(data);
   content ~= readFooter();
 
   return content.data;

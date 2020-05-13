@@ -110,6 +110,42 @@ a:hover {
   }
 }
 /*----------------------------------------------------------------------*/
+nav.toc:not(:empty):before {
+  content: "Table of Contents";
+  color: #2f4f4f;
+  font-weight: bold;
+  width: 100%;
+  border-bottom: 1px solid #dd0000;
+  display: block;
+}
+nav.toc > ul {
+  list-style: none;
+  padding-left: 0px;
+}
+nav.toc > ul a {
+  color: #2f4f4f;
+}
+nav.toc > ul a:hover {
+  color: #dd0000;
+}
+@media only screen and (min-width: 1520px) {
+ nav.toc {
+    position: fixed;
+    top: 16px;
+    padding-bottom: 16px;
+    margin-left: -360px;
+    width: 340px;
+    height: calc(100% - 48px);
+    max-height: calc(100% - 48px);
+  }
+}
+@media only screen and (max-width: 1520px) {
+  nav.toc {
+    overflow: auto;
+    padding: 8px;
+  }
+}
+/*----------------------------------------------------------------------*/
 .page-header {
   margin-top: 0px;
 }

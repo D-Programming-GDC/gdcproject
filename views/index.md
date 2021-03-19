@@ -14,6 +14,8 @@ now under the lead of Iain Buclaw, who has been steering the project since
 2009 with the assistance of its contributors.  Without them, the project
 would not have been nearly as successful as it has been.
 
+GDC was merged into the upstream GCC tree in GCC 9.0 and continues to be developed and distributed as part of GCC.
+
 ### Bugs in GDC ###
 
 Please report bugs!
@@ -41,7 +43,6 @@ are part of preparing a new improved version.  For general help with GDC,
 the [D.gnu][mailinglist] mailing list is the place to go with questions
 or problems.
 
-[bugzilla]: http://bugzilla.gdcproject.org
-[openbugs]: http://bugzilla.gdcproject.org/describecomponents.cgi
+[bugzilla]: https://gcc.gnu.org/bugzilla/
+[openbugs]: https://gcc.gnu.org/bugzilla/buglist.cgi?product=gcc&component=d&resolution=---
 [mailinglist]: http://forum.dlang.org/group/D.gnu
-

@@ -22,11 +22,12 @@ repository][git].  Documentation on GDC is available from [the wiki][wiki].
 If you are looking for a project to help improve GDC, check the [project
 ideas][ideas] page.
 
-Feel free to contact me via [email][mailto] or message me at #d.gdc on
-FreeNode.
+Feel free to contact me via [email][mailto] or message me at [#d-gdc][irc] on
+Libera.Chat.
 
 [git]: https://github.com/D-Programming-GDC/GCC
 [wiki]: http://wiki.gdcproject.org
 [ideas]: http://wiki.dlang.org/GDC/ProjectIdeas
 [mailto]: mailto:ibuclaw@gdcproject.org
+[irc]: https://web.libera.chat/#d-gdc
 

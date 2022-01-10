@@ -8,6 +8,7 @@ page][installwiki].
 Official packages are available for several linux distributions including:
  * [Arch Linux][archpkg]
  * [Debian][debianpkg]
+ * [Fedora][fedorapkg]
  * [Ubuntu][ubuntupkg]
  * [Slackware][slackwarepkg]
 
@@ -24,6 +25,7 @@ As GDC is now part of GCC, you should now install it from GCC distributors.
 [installwiki]: http://wiki.dlang.org/GDC/Installation
 [archpkg]: https://archlinux.org/packages/core/x86_64/gcc-d/
 [debianpkg]: https://packages.debian.org/stable/devel/gdc
+[fedorapkg]: https://packages.fedoraproject.org/pkgs/gcc/gcc-gdc/
 [ubuntupkg]: https://packages.ubuntu.com/search?suite=all&searchon=names&keywords=gdc
 [olddownloads]: /old/downloads
 [gdcarchives]: /archive
